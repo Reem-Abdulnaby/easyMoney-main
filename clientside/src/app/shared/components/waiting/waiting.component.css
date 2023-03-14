@@ -1,0 +1,102 @@
+.waiting {
+  position: absolute;
+  top: 0px;
+  left: 0px;
+  width: 100%;
+  height: 100%;
+  background-color: #00000038;
+  z-index: 100;
+}
+
+#spinner2 {
+  display: block;
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  height: 50px;
+  width: 50px;
+  margin: -25px 0 0 -25px;
+  border: 5px solid transparent;
+  border-top-color: rgb(5 110 184);
+  border-bottom-color: rgb(5 110 184);
+  border-radius: 50%;
+  -webkit-animation: spinner2 0.5s linear infinite;
+  animation: spinner2 0.5s linear infinite;
+}
+
+#spinner2:after {
+  content: "";
+  position: absolute;
+  top: 5px;
+  right: 5px;
+  bottom: 5px;
+  left: 5px;
+  border: 5px solid transparent;
+  border-radius: 50%;
+  background: rgb(5 110 184/ 0.25);
+  -webkit-animation: spinner2_after 1s linear infinite;
+  animation: spinner2_after 1s linear infinite;
+}
+
+@keyframes spinner2 {
+  0% {
+    -webkit-transform: rotate(0deg);
+    transform: rotate(0deg);
+    -webkit-transform: rotate(0deg);
+    transform: rotate(0deg);
+  }
+  50% {
+    -webkit-transform: rotate(180deg);
+    transform: rotate(180deg);
+    -webkit-transform: rotate(180deg);
+    transform: rotate(180deg);
+  }
+  100% {
+    -webkit-transform: rotate(360deg);
+    transform: rotate(360deg);
+    -webkit-transform: rotate(360deg);
+    transform: rotate(360deg);
+  }
+}
+@keyframes spinner2_after {
+  0% {
+    border-top: 5px solid rgb(5 110 184);
+    border-bottom: 5px solid rgb(5 110 184);
+  }
+  50% {
+    border-top: 5px solid rgb(5 110 184/ 0.25);
+    border-bottom: 5px solid rgb(5 110 184/ 0.25);
+  }
+  100% {
+    border-top: 5px solid rgb(5 110 184);
+    border-bottom: 5px solid rgb(5 110 184);
+  }
+}
+@-webkit-keyframes spinner2 {
+  0% {
+    -webkit-transform: rotate(0deg);
+    transform: rotate(0deg);
+  }
+  50% {
+    -webkit-transform: rotate(180deg);
+    transform: rotate(180deg);
+  }
+  100% {
+    -webkit-transform: rotate(360deg);
+    transform: rotate(360deg);
+  }
+}
+@-webkit-keyframes spinner2_after {
+  0% {
+    border-top: 5px solid rgb(5 110 184);
+    border-bottom: 5px solid rgb(5 110 184);
+  }
+  50% {
+    border-top: 5px solid rgb(5 110 184/ 0.25);
+    border-bottom: 5px solid rgb(5 110 184/ 0.25);
+  }
+  100% {
+    border-top: 5px solid rgb(5 110 184);
+    border-bottom: 5px solid rgb(5 110 184);
+  }
+}

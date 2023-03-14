@@ -1,0 +1,167 @@
+pagination?page=1&limit=10
+
+1-sign up (email,password,username,phone,pic) email is unique (email , password) only are required
+https://eazymoneyserver-production.up.railway.app/api/v1/admin/add (post)
+response {
+      ok: true,
+      code: 201,
+      message: 'succeeded',
+      data: admin,
+      token
+      }
+
+2-login (email,password) only
+https://eazymoneyserver-production.up.railway.app/api/v1/admin/login (post)
+response{
+            ok: true,
+          code: 200,
+          message: 'succeeded',
+          data: 'code has been sent to your email'
+}
+3-authenticate-login-code(code) only
+https://eazymoneyserver-production.up.railway.app/api/v1/admin/authenticate-login-code(post)
+      data: {
+        admin: adminWithLoginCode,
+        users,
+        sellers,
+        buyers,
+        products,
+        createdSellersChart,
+        createdBuyersChart,
+        blockedSellersChart,
+        blockedBuyersChart,
+        productsChart,
+      },
+      token
+    })
+
+4-logout(token in the header of the request ) : name of the header(Authorization)
+https://eazymoneyserver-production.up.railway.app/api/v1/admin/logout (delete)
+
+5-logout all devices(token in the header of the request ) : name of the header(Authorization)
+https://eazymoneyserver-production.up.railway.app/api/v1/admin/logout-all (delete)
+
+
+6-get-data (token in the header of the request ) : name of the header(Authorization)
+https://eazymoneyserver-production.up.railway.app/api/v1/admin/get-data (get)
+response{
+        ok: true,
+      code: 200,
+      message: 'succeeded',
+      data: req.admin,
+      users,
+      sellers,
+      buyers,
+      products,
+      productsChart,
+      createdSellersChart,
+      createdBuyersChart,
+      blockedSellersChart,
+      blockedBuyersChart,
+}
+
+7-forget-password (email in body)
+https://eazymoneyserver-production.up.railway.app/api/v1/admin/forget-password (put)
+response{
+                  {
+                  ok: true,
+                  code: 200,
+                  message: 'succeeded',
+                  data: 'email has been sent'
+                }
+}
+
+
+8-reset-password (token in url , password in body)
+https://eazymoneyserver-production.up.railway.app/api/v1/admin/reset-password/:token (put)
+response{
+                ok: true,
+                code: 200,
+                message: 'succeeded',
+                data: 'your password is successfully changed'
+}
+
+// start from here all need token in header
+
+// users
+9- add user (name , phone,email,password,role) phone and email are unique, role (buyer or seller only)
+https://eazymoneyserver-production.up.railway.app/api/v1/admin/users/add (post)
+
+
+10-get user by id (id in url)
+https://eazymoneyserver-production.up.railway.app/api/v1/admin/users/:id (get)
+
+
+
+11- get all users (can use pagination in url as query)
+https://eazymoneyserver-production.up.railway.app/api/v1/admin/users/all (get)
+
+
+12- get all sellers (can use pagination in url as query)
+https://eazymoneyserver-production.up.railway.app/api/v1/admin/users/sellers (get)
+
+13- get all buyers (can use pagination in url as query)
+https://eazymoneyserver-production.up.railway.app/api/v1/admin/users/buyers (get)
+
+14- update (id in url and the patches in body)
+https://eazymoneyserver-production.up.railway.app/api/v1/admin/users/update/:id (patch)
+
+15- logout user from all devices (id in url)
+https://eazymoneyserver-production.up.railway.app/api/v1/admin/users/logout/:id (delete)
+
+
+// products 
+
+16- get all products (can use pagination in url as query)
+https://eazymoneyserver-production.up.railway.app/api/v1/admin/products/all (get)
+
+17- get products by name (name in url) (can use pagination in url as query) 
+https://eazymoneyserver-production.up.railway.app/api/v1/admin/products/name/:name (get)
+
+
+18- get products by category (category in url) (can use pagination in url as query)
+https://eazymoneyserver-production.up.railway.app/api/v1/admin/products/category/:cat (get)
+
+19- get product by id (id in url)
+https://eazymoneyserver-production.up.railway.app/api/v1/admin/products/id/:id (get)
+
+20- get products by SellerId (SellerId in url)  (can use pagination in url as query)
+https://eazymoneyserver-production.up.railway.app/api/v1/admin/products/seller/:id (get)
+
+
+21- get seller by productId (product in url)
+https://eazymoneyserver-production.up.railway.app/api/v1/admin/products/product/get-seller/:id (get)
+
+22- get all categories
+https://eazymoneyserver-production.up.railway.app/api/v1/admin/products/categories/all (get)
+
+23- add product (data in body)
+https://eazymoneyserver-production.up.railway.app/api/v1/admin/products/add (post)
+
+24- update product (id in url) (data in body)
+https://eazymoneyserver-production.up.railway.app/api/v1/admin/products/product/:id (patch)
+
+25- delete product (id in url )
+https://eazymoneyserver-production.up.railway.app/api/v1/admin/products/product/:id (delete)
+
+
+user parameters 
+required{
+name , 
+phone (unique),
+email (unique),
+password (must contain letters ,numbers, capital letter and special character),
+role (seller or buyer only)
+}
+
+address,
+status (active or not active),
+photo,
+whatsapp_num,
+facebook,
+website,
+payment_method,
+payment_method_number
+
+
+id and tokens havenot change by you.

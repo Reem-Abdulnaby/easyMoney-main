@@ -1,0 +1,259 @@
+.signup {
+  padding: 80px 0px;
+}
+
+/* *********** */
+.signup .overlay {
+  position: absolute;
+  width: 485px;
+  height: 100%;
+  top: 0px;
+  left: 0px;
+  background-image: url("/assets/imgs/2.jpg");
+  background-size: cover;
+  background-position: center;
+  background-attachment: fixed;
+  z-index: -1;
+}
+.signup .overlay .shadow {
+  width: 100%;
+  height: 100%;
+  background-color: #056eb85d;
+}
+
+/* *********** */
+.signup .container {
+  background-color: #f7f7f7;
+  box-shadow: 0px 0px 20px 2px rgb(2 2 2 / 15%);
+  border-radius: 5px;
+}
+.signup .container .row .col-lg-8,
+.signup .container .row .col-lg-4 {
+  padding: 70px 0px;
+  display: flex !important;
+  justify-content: center;
+  align-items: center;
+  flex-direction: column;
+}
+.signup .container .row .col-lg-4 {
+  background-color: #056eb8;
+}
+
+/* *********** */
+.signup-form {
+  width: 70%;
+  margin: auto;
+  text-align: right !important;
+}
+.signup-form h2 {
+  display: inline-block;
+  color: #056eb8;
+  position: relative;
+  padding-bottom: 7px;
+  margin-bottom: 30px;
+}
+.signup-form h2::after {
+  content: "";
+  position: absolute;
+  bottom: -3px;
+  right: 0px;
+  width: 60px;
+  height: 3px;
+  border-radius: 5px;
+  background-color: #056eb8;
+}
+.register-link {
+  margin-top: 25px;
+  letter-spacing: 1px;
+  font-weight: 500;
+  color: #737373;
+}
+.register-link a {
+  color: #056eb8;
+  transition: 0.4s;
+}
+.register-link a:hover {
+  color: #056eb8 !important;
+}
+:host::ng-deep .mat-form-field {
+  display: block;
+  text-align: right;
+  margin-bottom: 10px;
+}
+:host::ng-deep .mat-form-field-flex,
+.file-input {
+  background-color: #f1f1f1;
+  box-shadow: 0px 0px 2px 1px rgb(0 0 0 / 10%);
+}
+
+.file-input {
+  margin-bottom: 25px;
+  padding: 15px 10px 60px;
+  color: #818181;
+  position: relative;
+  overflow: hidden;
+  cursor: pointer;
+}
+.file-input input {
+  position: absolute;
+  width: 100%;
+  z-index: 2;
+  opacity: 0;
+  padding: 5px;
+  top: 50%;
+  cursor: pointer;
+}
+.file-input span {
+  position: absolute;
+  right: 20%;
+  top: 58%;
+  font-size: 10px;
+  font-weight: 500;
+  cursor: pointer;
+}
+.file-input span.text-success {
+  font-size: 15px;
+  word-break: break-all;
+}
+.file-input button {
+  position: absolute;
+  top: 50%;
+  padding: 8px 18px;
+  border-radius: 5px;
+  background-color: #235597;
+  color: #fff;
+  border: none;
+  letter-spacing: 0.5px;
+  font-size: 15px;
+  z-index: 1;
+  cursor: pointer;
+}
+
+:host::ng-deep .mat-focus-indicator.mat-raised-button.mat-button-base {
+  background-color: #056eb8 !important;
+  color: #fff !important;
+}
+
+.suggest-pass {
+  display: flex;
+  position: absolute;
+  width: 65%;
+  right: 30%;
+  padding: 10px 15px 10px 10px;
+  top: 0px;
+  background-color: #056eb8d6;
+  z-index: 2;
+  color: #fff;
+  border-radius: 5px;
+  cursor: pointer;
+}
+.suggest-pass::before {
+  content: "";
+  position: absolute;
+  right: -25px;
+  top: 50%;
+  transform: translateY(-50%);
+  border: 14px solid transparent;
+  border-left-color: #795f9a;
+  border-radius: 5px;
+}
+
+/* *********** */
+.signup .signup-img {
+  color: #f7f7f7 !important;
+}
+
+.signup .signup-img img {
+  width: 85px !important;
+  height: 100px !important;
+  border-radius: 5px;
+  background: #f7f7f742;
+  padding: 5px 10px 10px;
+}
+
+.signup .signup-img h3 {
+  font-size: 20px;
+  letter-spacing: 1px;
+  font-weight: 600;
+  margin: 10px 0px 8px;
+}
+.signup .signup-img p {
+  font-size: 14px;
+  margin-bottom: 0px;
+  letter-spacing: 1px;
+}
+
+@media (max-width: 991.9px) {
+  .signup .overlay {
+    width: 50% !important;
+  }
+  .signup-form {
+    width: 80% !important;
+  }
+}
+@media (max-width: 768px) {
+  .file-input span {
+    right: 22%;
+  }
+  .signup-form {
+    width: 90% !important;
+  }
+}
+
+@media (max-width: 575px) {
+  .file-input span {
+    right: 35%;
+  }
+  :host ::ng-deep .mat-horizontal-stepper-header-container {
+    flex-wrap: wrap !important;
+  }
+}
+@media (max-width: 350px) {
+  .file-input span {
+    right: 45%;
+  }
+}
+
+:host ::ng-deep .mat-form-field-empty.mat-form-field-label {
+  padding-bottom: 7px !important;
+}
+
+.list-unstyled li,
+.pass-error {
+  font-size: 12px;
+  padding: 3px;
+  letter-spacing: 1px;
+  color: #f00;
+}
+
+.list-unstyled li i {
+  margin-right: 5px;
+}
+
+/* **************** Stepper **************** */
+
+:host ::ng-deep .material-icons {
+  font-family: "Material Icons" !important;
+}
+
+:host ::ng-deep .mat-stepper-horizontal,
+:host ::ng-deep .mat-stepper-vertical {
+  background: transparent !important;
+}
+
+:host ::ng-deep .mat-horizontal-content-container {
+  padding-top: 30px !important;
+  padding-bottom: 0px !important;
+}
+:host ::ng-deep .mat-button {
+  background: #3f51b5 !important;
+  color: #fff !important;
+  margin-top: 15px !important;
+}
+:host ::ng-deep .mat-button-disabled {
+  background: #05436e !important;
+  color: #bdbdbd !important;
+}
+:host ::ng-deep .mat-step-header .mat-step-icon-selected {
+  background-color: #0b6cb1 !important;
+}

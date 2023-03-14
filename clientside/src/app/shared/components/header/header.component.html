@@ -1,0 +1,39 @@
+<div
+  class="btns mt-2 mt-lg-0 me-lg-2 me-xl-4 d-flex justify-content-center align-items-center flex-column flex-lg-row"
+>
+  <button
+    *ngIf="!user && !userName && !userId"
+    class="btn rounded auth-btn ms-lg-2"
+    [routerLink]="['auth/login']"
+  >
+    تسجيل الدخول
+  </button>
+  <button
+    *ngIf="!user && !userName && !userId"
+    class="btn rounded auth-btn register"
+    [routerLink]="['auth/signup']"
+  >
+    انشاء حساب
+  </button>
+
+  <a class="nav-link" *ngIf="user || (userName && userId)">
+    <i class="fa fa-user fs-6 me-1"></i>
+    {{ userName }}
+  </a>
+
+  <button
+    *ngIf="user || (userName && userId)"
+    class="btn btn-danger rounded auth-btn register"
+    (click)="logOut()"
+  >
+    تسجيل الخروج
+  </button>
+
+  <button
+    *ngIf="user || (userName && userId)"
+    class="btn btn-danger rounded auth-btn register"
+    (click)="logOutFromAll()"
+  >
+    تسجيل الخروج من كل الاجهزة
+  </button>
+</div>

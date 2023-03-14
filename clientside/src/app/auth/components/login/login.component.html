@@ -1,0 +1,95 @@
+<div class="login position-relative">
+  <div class="overlay">
+    <div class="shadow"></div>
+  </div>
+  <div class="container">
+    <div class="row">
+      <div class="col-12 col-lg-8 position-relative">
+        <ng-container *ngIf="showWaiting">
+          <app-waiting></app-waiting>
+        </ng-container>
+
+        <div class="login-form">
+          <h2>تسجيل الدخول</h2>
+          <form #form="ngForm" (ngSubmit)="login(form)">
+            <mat-form-field class="example-full-width" appearance="fill">
+              <mat-label>البريد الالكتروني</mat-label>
+              <input
+                type="email"
+                matInput
+                name="email"
+                ngModel
+                #email="ngModel"
+                placeholder="Ex. pat@example.com"
+                required
+                email
+              />
+              <mat-error
+                *ngIf="email.hasError('email') && !email.hasError('required')"
+              >
+                رجاءا قم بادخال بريد الكتروني صحيح
+              </mat-error>
+              <mat-error *ngIf="email.hasError('required')">
+                هذا الحقل <strong>اجباري</strong>
+              </mat-error>
+            </mat-form-field>
+
+            <mat-form-field class="example-full-width" appearance="fill">
+              <mat-label>كلمة المرور</mat-label>
+              <input
+                type="password"
+                name="password"
+                matInput
+                ngModel
+                #pass="ngModel"
+                required
+                minlength="8"
+              />
+              <mat-error
+                *ngIf="pass.hasError('minlength') && !pass.hasError('required')"
+              >
+                رجاءا ادخل كلمة مرور لا تقل عن 8 احرف و ارقام!
+              </mat-error>
+              <mat-error *ngIf="pass.hasError('required')">
+                هذا الحقل <strong>اجباري</strong>
+              </mat-error>
+            </mat-form-field>
+
+            <p class="register-link" style="margin-top: 10px">
+              <a routerLink="../forget-password"> نسيت كلمة المرور؟ </a>
+            </p>
+
+            <button
+              type="submit"
+              mat-raised-button
+              color="primary"
+              [disabled]="form.invalid"
+            >
+              تسجيل الدخول
+            </button>
+          </form>
+          <p class="register-link">
+            ليس لديك حساب؟<a routerLink="../signup"> انشاء حساب </a>
+          </p>
+        </div>
+      </div>
+      <div class="col-lg-4 d-none d-lg-block">
+        <div class="login-img text-center">
+          <img src="/assets/imgs/logo.jpg" alt="logo img" />
+          <h3>Company Name</h3>
+          <p>Company Name</p>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+
+<swal
+  #errorRecord
+  title="تسجيل الدخول"
+  text=""
+  icon="error"
+  [showCancelButton]="false"
+  [focusCancel]="false"
+>
+</swal>

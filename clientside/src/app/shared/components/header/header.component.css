@@ -1,0 +1,7 @@
+.btns {
+  padding: 20px;
+  background-color: #95959554;
+  margin: 0px !important;
+  display: flex !important;
+  justify-content: space-evenly !important;
+}
